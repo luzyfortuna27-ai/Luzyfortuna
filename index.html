@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz y Fortuna Tarot - Servicios Místicos y Productos Esotéricos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .image-hover {
+            transition: transform 0.3s ease;
+        }
+        .image-hover:hover {
+            transform: scale(1.05);
+        }
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="h-full bg-gray-50">
+    <header class="gradient-bg text-white">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🔮</span>
+                    <h1 class="text-2xl font-bold">Luz y Fortuna Tarot</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#servicios" class="hover:text-purple-200 transition-colors">Servicios</a>
+                    <a href="#productos" class="hover:text-purple-200 transition-colors">Productos</a>
+                    <a href="#cursos" class="hover:text-purple-200 transition-colors">Cursos</a>
+                    <a href="#galeria" class="hover:text-purple-200 transition-colors">Galería</a>
+                    <a href="#contacto" class="hover:text-purple-200 transition-colors">Contacto</a>
+                </div>
+                <button id="menuBtn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+                <a href="#servicios" class="block hover:text-purple-200 transition-colors">Servicios</a>
+                <a href="#productos" class="block hover:text-purple-200 transition-colors">Productos</a>
+                <a href="#cursos" class="block hover:text-purple-200 transition-colors">Cursos</a>
+                <a href="#galeria" class="block hover:text-purple-200 transition-colors">Galería</a>
+                <a href="#contacto" class="block hover:text-purple-200 transition-colors">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="floating mb-8">
+                    <span class="text-6xl">✨</span>
+                </div>
+                <h2 class="text-5xl font-bold mb-6">Descubre tu Camino Espiritual</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Acompañamos a cada ser en su proceso de autodescubrimiento, brindando herramientas terapéuticas y espirituales que integren el alma, la mente y el cuerpo</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'})" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-50 transition-colors">
+                        Explorar Servicios
+                    </button>
+                    <button onclick="contactWhatsAppGeneral()" class="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition-colors flex items-center justify-center space-x-2">
+                        <span>💬</span>
+                        <span>Contactar por WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mí Section -->
+        <section class="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                        <img src="https://i.imgur.com/hoZZ49K.jpeg" alt="Luz y Fortuna Tarot - Consultor Espiritual" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                    </div>
+                    <h3 class="text-4xl font-bold mb-6 text-gray-800">Bienvenido a Luz y Fortuna Tarot</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                        Con años de experiencia en el mundo espiritual, me dedico a acompañar a cada alma en su proceso de autodescubrimiento y transformación. A través del tarot, la astrología y las terapias holísticas, ayudo a las personas a reconectar con su propósito divino y manifestar una vida plena y consciente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Misión y Visión Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="card-hover bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-lg border border-purple-100">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                            <img src="https://i.imgur.com/eYARFqF.jpeg" alt="Misión - Velas Rituales" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Nuestra Misión</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Acompañar a cada ser en su proceso de autodescubrimiento, brindando herramientas terapéuticas y espirituales que integren el alma, la mente y el cuerpo.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mt-4">
+                            A través de cursos, lecturas, libros, oráculos y contenido inspirador, Luz y Fortuna Tarot promueve la sanación, el perdón, la expansión de la conciencia y la manifestación del propósito divino, recordando que toda transformación inicia en la luz que habita dentro de cada uno.
+                        </p>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-lg border border-blue-100">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                            <img src="https://i.imgur.com/WnjBQMm.jpeg" alt="Visión - Esencias Aromáticas" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Nuestra Visión</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Ser un faro de luz y sabiduría espiritual que inspire a las personas a reconectar con su propósito, transformar sus sombras en fuerza interior y manifestar una vida consciente, próspera y plena.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mt-4">
+                            "Luz y Fortuna Tarot" aspira a ser una escuela del alma donde el conocimiento ancestral —tarot, astrología, numerología y simbología sagrada— se una con la psicología y la espiritualidad moderna para guiar la evolución humana hacia la plenitud y el despertar interior.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">Nuestros Servicios</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-100">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="https://i.imgur.com/Qzbs2IA.jpeg" alt="Carta Natal" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Carta Natal</h4>
+                        <p class="text-gray-600 mb-4">Descubre tu propósito de vida y personalidad a través del análisis completo de tu carta astral</p>
+                        <div class="flex space-x-2">
+                            <button onclick="openServiceModal('carta-natal')" class="flex-1 bg-purple-600 text-white px-3 py-2 rounded hover:bg-purple-700 transition-colors text-sm">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsApp('carta-natal')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-100">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="https://i.imgur.com/CFGXGrP.jpeg" alt="Lectura de Tarot" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Lectura de Tarot</h4>
+                        <p class="text-gray-600 mb-4">Obtén claridad sobre tu presente y futuro con una lectura personalizada de cartas</p>
+                        <div class="flex space-x-2">
+                            <button onclick="openServiceModal('tarot')" class="flex-1 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsApp('tarot')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-lg border border-yellow-100">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="https://i.imgur.com/Yqgfjqn.jpeg" alt="Tarot Angélico" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Tarot Angélico</h4>
+                        <p class="text-gray-600 mb-4">Conecta con la sabiduría angelical para recibir mensajes de amor y protección</p>
+                        <div class="flex space-x-2">
+                            <button onclick="openServiceModal('tarot-angelico')" class="flex-1 bg-orange-600 text-white px-3 py-2 rounded hover:bg-orange-700 transition-colors text-sm">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsApp('tarot-angelico')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg border border-green-100">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="https://i.imgur.com/5BX8a7m.jpeg" alt="Consejería Espiritual" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Consejería Espiritual</h4>
+                        <p class="text-gray-600 mb-4">Recibe orientación personalizada para superar obstáculos y encontrar tu equilibrio</p>
+                        <div class="flex space-x-2">
+                            <button onclick="openServiceModal('consejeria')" class="flex-1 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition-colors text-sm">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsApp('consejeria')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-lg border border-pink-100">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="https://i.imgur.com/3rN1yHk.jpeg" alt="Guía Espiritual" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Guía Espiritual</h4>
+                        <p class="text-gray-600 mb-4">Acompañamiento continuo en tu proceso de crecimiento y despertar espiritual</p>
+                        <div class="flex space-x-2">
+                            <button onclick="openServiceModal('guia')" class="flex-1 bg-pink-600 text-white px-3 py-2 rounded hover:bg-pink-700 transition-colors text-sm">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsApp('guia')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-lg border border-amber-100">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-lg overflow-hidden">
+                            <img src="https://i.imgur.com/HhSLAJD.jpeg" alt="Rituales Personalizados" class="w-full h-full object-cover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Rituales Personalizados</h4>
+                        <p class="text-gray-600 mb-4">Ceremonias sagradas diseñadas específicamente para tus necesidades de sanación y manifestación</p>
+                        <div class="flex space-x-2">
+                            <button onclick="openServiceModal('rituales')" class="flex-1 bg-amber-600 text-white px-3 py-2 rounded hover:bg-amber-700 transition-colors text-sm">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsApp('rituales')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Section -->
+        <section id="productos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">Productos Esotéricos</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://i.imgur.com/AZCNJ3C.jpeg" alt="Velas Rituales Artesanales" class="w-full h-full object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Velas Rituales</h4>
+                            <p class="text-gray-600 mb-4">Velas artesanales para rituales de amor, prosperidad, protección y limpieza energética</p>
+                            <div class="text-lg font-semibold text-purple-600 mb-3">Desde $12 USD</div>
+                            <div class="flex space-x-2">
+                                <button onclick="openProductModal('velas')" class="flex-1 bg-purple-600 text-white px-3 py-2 rounded hover:bg-purple-700 transition-colors text-sm">
+                                    Ver Catálogo
+                                </button>
+                                <button onclick="contactWhatsAppProduct('velas')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                    💬 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://i.imgur.com/88MMHcw.jpeg" alt="Esencias Aromáticas Naturales" class="w-full h-full object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Esencias Aromáticas</h4>
+                            <p class="text-gray-600 mb-4">Aceites esenciales y esencias para aromaterapia, meditación y sanación</p>
+                            <div class="text-lg font-semibold text-purple-600 mb-3">Desde $10 USD</div>
+                            <div class="flex space-x-2">
+                                <button onclick="openProductModal('esencias')" class="flex-1 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition-colors text-sm">
+                                    Ver Catálogo
+                                </button>
+                                <button onclick="contactWhatsAppProduct('esencias')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                    💬 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://i.imgur.com/BancmIa.jpeg" alt="Jabones Energéticos Artesanales" class="w-full h-full object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Jabones Energéticos</h4>
+                            <p class="text-gray-600 mb-4">Jabones artesanales con hierbas y aceites para limpieza espiritual y protección</p>
+                            <div class="text-lg font-semibold text-purple-600 mb-3">Desde $8 USD</div>
+                            <div class="flex space-x-2">
+                                <button onclick="openProductModal('jabones')" class="flex-1 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+                                    Ver Catálogo
+                                </button>
+                                <button onclick="contactWhatsAppProduct('jabones')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                    💬 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://i.imgur.com/DGA3Osj.jpeg" alt="Libros Espirituales y Guías" class="w-full h-full object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Libros Espirituales</h4>
+                            <p class="text-gray-600 mb-4">Colección de libros sobre tarot, astrología, meditación y crecimiento personal</p>
+                            <div class="text-lg font-semibold text-purple-600 mb-3">Desde $20 USD</div>
+                            <div class="flex space-x-2">
+                                <button onclick="openProductModal('libros')" class="flex-1 bg-indigo-600 text-white px-3 py-2 rounded hover:bg-indigo-700 transition-colors text-sm">
+                                    Ver Catálogo
+                                </button>
+                                <button onclick="contactWhatsAppProduct('libros')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                    💬 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://i.imgur.com/L8EtOP9.jpeg" alt="Cuarzos y Cristales Naturales" class="w-full h-full object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-3 text-gray-800">Cuarzos y Cristales</h4>
+                            <p class="text-gray-600 mb-4">Cristales naturales para sanación, protección, abundancia y equilibrio energético</p>
+                            <div class="text-lg font-semibold text-purple-600 mb-3">Desde $10 USD</div>
+                            <div class="flex space-x-2">
+                                <button onclick="openProductModal('cuarzos')" class="flex-1 bg-purple-600 text-white px-3 py-2 rounded hover:bg-purple-700 transition-colors text-sm">
+                                    Ver Catálogo
+                                </button>
+                                <button onclick="contactWhatsAppProduct('cuarzos')" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 transition-colors text-sm">
+                                    💬 Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería Section -->
+        <section id="galeria" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">Galería de Trabajos</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card-hover rounded-lg overflow-hidden shadow-md">
+                        <img src="https://i.imgur.com/GrJ8t8E.jpeg" alt="Sesión de Tarot Personalizada" class="w-full h-64 object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        <div class="p-4 bg-white">
+                            <h5 class="font-semibold text-gray-800">Sesión de Tarot</h5>
+                            <p class="text-sm text-gray-600">Lectura personalizada con cartas especializadas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover rounded-lg overflow-hidden shadow-md">
+                        <img src="https://i.imgur.com/HhSLAJD.jpeg" alt="Ritual de Limpieza Energética" class="w-full h-64 object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        <div class="p-4 bg-white">
+                            <h5 class="font-semibold text-gray-800">Ritual de Limpieza</h5>
+                            <p class="text-sm text-gray-600">Ceremonia de purificación energética</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover rounded-lg overflow-hidden shadow-md">
+                        <img src="https://i.imgur.com/Qzbs2IA.jpeg" alt="Consulta de Carta Natal" class="w-full h-64 object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        <div class="p-4 bg-white">
+                            <h5 class="font-semibold text-gray-800">Carta Natal</h5>
+                            <p class="text-sm text-gray-600">Análisis astrológico completo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover rounded-lg overflow-hidden shadow-md">
+                        <img src="https://i.imgur.com/DGA3Osj.jpeg" alt="Taller de Meditación" class="w-full h-64 object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        <div class="p-4 bg-white">
+                            <h5 class="font-semibold text-gray-800">Taller de Meditación</h5>
+                            <p class="text-sm text-gray-600">Sesión grupal de conexión espiritual</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover rounded-lg overflow-hidden shadow-md">
+                        <img src="https://i.imgur.com/wNvwZmS.jpeg" alt="Productos Artesanales" class="w-full h-64 object-cover image-hover" onerror="this.src=''; this.alt='Imagen no disponible'; this.style.display='none';">
+                        <div class="p-4 bg-white">
+                            <h5 class="font-semibold text-gray-800">Productos Artesanales</h5>
+                            <p class="text-sm text-gray-600">Creaciones únicas para rituales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cursos Section -->
+        <section id="cursos" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">Cursos y Talleres</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-lg">
+                        <div class="text-5xl mb-4">🎓</div>
+                        <h4 class="text-2xl font-semibold mb-4 text-gray-800">Curso de Tarot Básico</h4>
+                        <p class="text-gray-600 mb-4">Aprende a leer las cartas del tarot desde cero. Incluye manual, cartas y certificado.</p>
+                        <ul class="text-gray-600 mb-6 space-y-2">
+                            <li>✨ 8 semanas de duración</li>
+                            <li>✨ Clases online en vivo</li>
+                            <li>✨ Material incluido</li>
+                            <li>✨ Certificado de finalización</li>
+                        </ul>
+                        <div class="text-2xl font-bold text-purple-600 mb-4">$160 USD</div>
+                        <div class="flex space-x-2">
+                            <button onclick="openCourseModal('tarot-basico')" class="flex-1 bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700 transition-colors">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsAppCourse('tarot-basico')" class="bg-green-500 text-white px-4 py-3 rounded hover:bg-green-600 transition-colors">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-lg">
+                        <div class="text-5xl mb-4">🌟</div>
+                        <h4 class="text-2xl font-semibold mb-4 text-gray-800">Taller de Astrología</h4>
+                        <p class="text-gray-600 mb-4">Descubre los secretos de la astrología y aprende a interpretar cartas natales.</p>
+                        <ul class="text-gray-600 mb-6 space-y-2">
+                            <li>✨ 6 semanas de duración</li>
+                            <li>✨ Modalidad presencial y online</li>
+                            <li>✨ Software incluido</li>
+                            <li>✨ Práctica con casos reales</li>
+                        </ul>
+                        <div class="text-2xl font-bold text-blue-600 mb-4">$200 USD</div>
+                        <div class="flex space-x-2">
+                            <button onclick="openCourseModal('astrologia')" class="flex-1 bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors">
+                                Ver Detalles
+                            </button>
+                            <button onclick="contactWhatsAppCourse('astrologia')" class="bg-green-500 text-white px-4 py-3 rounded hover:bg-green-600 transition-colors">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="py-16 gradient-bg text-white">
+            <div class="container mx-auto px-6">
+                <h3 class="text-4xl font-bold text-center mb-12">Contacto</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="text-2xl font-semibold mb-6">¿Listo para comenzar tu viaje espiritual?</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">👩‍🔮</span>
+                                <span>Silvia Luz Chica</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">📱</span>
+                                <span>+57 301 2842830</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">📧</span>
+                                <span>luzyfortuna27@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">📍</span>
+                                <span>Colombia</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🕐</span>
+                                <span>Lun-Vie: 9AM-7PM, Sáb: 10AM-5PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <button onclick="contactWhatsAppGeneral()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center space-x-2">
+                                <span>💬</span>
+                                <span>Contactar por WhatsApp</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium mb-2">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required class="w-full px-3 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="Tu nombre completo">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-3 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="tu@email.com">
+                            </div>
+                            <div>
+                                <label for="servicio" class="block text-sm font-medium mb-2">Servicio de Interés</label>
+                                <select id="servicio" name="servicio" class="w-full px-3 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="carta-natal">Carta Natal</option>
+                                    <option value="tarot">Lectura de Tarot</option>
+                                    <option value="tarot-angelico">Tarot Angélico</option>
+                                    <option value="consejeria">Consejería Espiritual</option>
+                                    <option value="guia">Guía Espiritual</option>
+                                    <option value="rituales">Rituales Personalizados</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="mensaje" class="block text-sm font-medium mb-2">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" class="w-full px-3 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-purple-600 px-6 py-3 rounded font-semibold hover:bg-purple-50 transition-colors">
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="contactWhatsAppGeneral()" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+            </svg>
+        </button>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <span class="text-2xl">🔮</span>
+                <span class="text-xl font-bold">Luz y Fortuna Tarot</span>
+            </div>
+            <p class="text-gray-400">© 2024 Luz y Fortuna Tarot. Todos los derechos reservados.</p>
+            <p class="text-gray-400 mt-2">Conectando almas con su propósito divino</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="serviceModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="serviceModalTitle" class="text-xl font-bold"></h3>
+                <button onclick="closeModal('serviceModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="serviceModalContent" class="mb-6"></div>
+            <div class="flex space-x-3">
+                <button onclick="closeModal('serviceModal')" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                    Cerrar
+                </button>
+                <button onclick="bookService()" class="flex-1 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">
+                    Reservar Cita
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="productModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="productModalTitle" class="text-xl font-bold"></h3>
+                <button onclick="closeModal('productModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="productModalContent" class="mb-6"></div>
+            <div class="flex space-x-3">
+                <button onclick="closeModal('productModal')" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                    Cerrar
+                </button>
+                <button onclick="contactForProduct()" class="flex-1 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">
+                    Contactar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="courseModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="courseModalTitle" class="text-xl font-bold"></h3>
+                <button onclick="closeModal('courseModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="courseModalContent" class="mb-6"></div>
+            <div class="flex space-x-3">
+                <button onclick="closeModal('courseModal')" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                    Cerrar
+                </button>
+                <button onclick="enrollCourse()" class="flex-1 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">
+                    Inscribirse
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="enrollmentModalTitle" class="text-xl font-bold"></h3>
+                <button onclick="closeModal('enrollmentModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <form id="enrollmentForm" class="space-y-4">
+                <div>
+                    <label for="studentName" class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo *</label>
+                    <input type="text" id="studentName" name="studentName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Tu nombre completo">
+                </div>
+                
+                <div>
+                    <label for="studentEmail" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <input type="email" id="studentEmail" name="studentEmail" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="tu@email.com">
+                </div>
+                
+                <div>
+                    <label for="studentPhone" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
+                    <input type="tel" id="studentPhone" name="studentPhone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="+57 300 123 4567">
+                </div>
+                
+                <div>
+                    <label for="studentAge" class="block text-sm font-medium text-gray-700 mb-2">Edad</label>
+                    <input type="number" id="studentAge" name="studentAge" min="16" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="25">
+                </div>
+                
+                <div>
+                    <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">Experiencia Previa</label>
+                    <select id="experience" name="experience" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="">Selecciona tu nivel</option>
+                        <option value="ninguna">Sin experiencia</option>
+                        <option value="basica">Conocimientos básicos</option>
+                        <option value="intermedia">Nivel intermedio</option>
+                        <option value="avanzada">Nivel avanzado</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="motivation" class="block text-sm font-medium text-gray-700 mb-2">¿Por qué quieres tomar este curso?</label>
+                    <textarea id="motivation" name="motivation" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Cuéntanos tu motivación..."></textarea>
+                </div>
+                
+                <div class="flex items-start space-x-2">
+                    <input type="checkbox" id="terms" name="terms" required class="mt-1">
+                    <label for="terms" class="text-sm text-gray-600">
+                        Acepto los <a href="#" class="text-purple-600 hover:underline">términos y condiciones</a> y la <a href="#" class="text-purple-600 hover:underline">política de privacidad</a> *
+                    </label>
+                </div>
+                
+                <div class="flex space-x-3 pt-4">
+                    <button type="button" onclick="closeModal('enrollmentModal')" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                        Cancelar
+                    </button>
+                    <button type="button" onclick="openPaymentModal()" class="flex-1 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors">
+                        Continuar al Pago
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Método de Pago</h3>
+                <button onclick="closeModal('paymentModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="paymentSummary" class="mb-6"></div>
+            
+            <div class="space-y-3">
+                <button onclick="processPayment('transfer')" class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
+                    <span>🏦</span>
+                    <span>Transferencia Bancaria</span>
+                </button>
+                
+                <button onclick="processPayment('paypal')" class="w-full bg-yellow-500 text-white px-4 py-3 rounded-lg hover:bg-yellow-600 transition-colors flex items-center justify-center space-x-2">
+                    <span>💳</span>
+                    <span>PayPal (Demo)</span>
+                </button>
+                
+                <button onclick="processPayment('card')" class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2">
+                    <span>💳</span>
+                    <span>Tarjeta de Crédito (Demo)</span>
+                </button>
+            </div>
+            
+            <div class="mt-4 text-center">
+                <button onclick="closeModal('paymentModal')" class="text-gray-500 hover:text-gray-700 text-sm">
+                    Volver atrás
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transfer Modal -->
+    <div id="transferModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Transferencia Bancaria</h3>
+                <button onclick="closeModal('transferModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                <h4 class="font-semibold mb-3">Datos Bancarios:</h4>
+                <div class="space-y-2 text-sm">
+                    <p><strong>Banco:</strong> Nequi</p>
+                    <p><strong>Tipo de Cuenta:</strong> Ahorros</p>
+                    <p><strong>Número:</strong> 3012842830</p>
+                    <p><strong>Titular:</strong> Silvia Luz Chica</p>
+                    <p><strong>Cédula:</strong> 43.724.147</p>
+                </div>
+            </div>
+            
+            <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-6">
+                <p class="text-sm text-yellow-800">
+                    <strong>Importante:</strong> Después de realizar la transferencia, envía el comprobante por WhatsApp al +57 301 2842830 con tu nombre completo.
+                </p>
+            </div>
+            
+            <div class="flex space-x-3">
+                <button onclick="closeModal('transferModal')" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                    Cancelar
+                </button>
+                <button onclick="confirmTransfer()" class="flex-1 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                    Ya Transferí
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Payment Modal -->
+    <div id="cardModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Pago con Tarjeta (Demo)</h3>
+                <button onclick="closeModal('cardModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg mb-4">
+                <p class="text-sm text-yellow-800">
+                    <strong>Nota:</strong> Este es un formulario de demostración. No se procesarán pagos reales.
+                </p>
+            </div>
+            
+            <form id="cardForm" class="space-y-4">
+                <div>
+                    <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-2">Número de Tarjeta</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="expiryDate" class="block text-sm font-medium text-gray-700 mb-2">Fecha de Vencimiento</label>
+                        <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/AA" maxlength="5" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="cvv" class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
+                        <input type="text" id="cvv" name="cvv" required placeholder="123" maxlength="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="cardName" class="block text-sm font-medium text-gray-700 mb-2">Nombre en la Tarjeta</label>
+                    <input type="text" id="cardName" name="cardName" required placeholder="JUAN PEREZ" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                </div>
+                
+                <div class="flex space-x-3 pt-4">
+                    <button type="button" onclick="closeModal('cardModal')" class="flex-1 bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                        Cancelar
+                    </button>
+                    <button type="button" onclick="processCardPayment()" class="flex-1 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+                        Pagar (Demo)
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="successMessage" class="hidden fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+        <div class="flex items-center space-x-2">
+            <span>✅</span>
+            <span id="successText"></span>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // WhatsApp contact functions - FIXED
+        function contactWhatsApp(serviceType) {
+            const services = {
+                'carta-natal': 'Carta Natal Completa ($80 USD)',
+                'tarot': 'Lectura de Tarot ($50 USD)',
+                'tarot-angelico': 'Tarot Angélico ($60 USD)',
+                'consejeria': 'Consejería Espiritual ($70 USD)',
+                'guia': 'Guía Espiritual ($120 USD/mes)',
+                'rituales': 'Rituales Personalizados ($90 USD)'
+            };
+            
+            const message = `¡Hola Luz! Me interesa el servicio: ${services[serviceType]}. ¿Podrías darme más información y disponibilidad para agendar una cita?`;
+            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function contactWhatsAppProduct(productType) {
+            const products = {
+                'velas': 'Velas Rituales',
+                'esencias': 'Esencias Aromáticas',
+                'jabones': 'Jabones Energéticos',
+                'libros': 'Libros Espirituales',
+                'cuarzos': 'Cuarzos y Cristales'
+            };
+            
+            const message = `¡Hola Luz! Me interesan los productos: ${products[productType]}. ¿Podrías enviarme el catálogo completo con precios, disponibilidad y formas de pago?`;
+            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function contactWhatsAppCourse(courseType) {
+            const courses = {
+                'tarot-basico': 'Curso de Tarot Básico ($160 USD)',
+                'astrologia': 'Taller de Astrología ($200 USD)'
+            };
+            
+            const message = `¡Hola Luz! Me interesa inscribirme en: ${courses[courseType]}. ¿Podrías darme información sobre fechas de inicio, modalidades y proceso de inscripción?`;
+            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function contactWhatsAppGeneral() {
+            const message = `¡Hola Luz! Me interesa conocer más sobre tus servicios espirituales y productos esotéricos. ¿Podrías ayudarme a encontrar lo que necesito para mi crecimiento espiritual?`;
+            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Service modal functions
+        function openServiceModal(serviceType) {
+            const modal = document.getElementById('serviceModal');
+            const title = document.getElementById('serviceModalTitle');
+            const content = document.getElementById('serviceModalContent');
+            
+            const services = {
+                'carta-natal': {
+                    title: 'Carta Natal Completa',
+                    content: `
+                        <p class="text-gray-600 mb-4">Análisis completo de tu carta astral que incluye:</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>• Posición de planetas al momento de tu nacimiento</li>
+                            <li>• Interpretación de signos y casas astrológicas</li>
+                            <li>• Aspectos planetarios y su influencia</li>
+                            <li>• Propósito de vida y talentos naturales</li>
+                            <li>• Recomendaciones personalizadas</li>
+                        </ul>
+                        <div class="bg-purple-50 p-4 rounded">
+                            <p class="font-semibold text-purple-800">Precio: $80 USD</p>
+                            <p class="text-sm text-purple-600">Duración: 90 minutos</p>
+                        </div>
+                    `
+                },
+                'tarot': {
+                    title: 'Lectura de Tarot',
+                    content: `
+                        <p class="text-gray-600 mb-4">Sesión de tarot personalizada que incluye:</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>• Tirada específica según tu consulta</li>
+                            <li>• Interpretación detallada de cada carta</li>
+                            <li>• Orientación para decisiones importantes</li>
+                            <li>• Consejos para el futuro cercano</li>
+                            <li>• Grabación de la sesión (opcional)</li>
+                        </ul>
+                        <div class="bg-blue-50 p-4 rounded">
+                            <p class="font-semibold text-blue-800">Precio: $50 USD</p>
+                            <p class="text-sm text-blue-600">Duración: 60 minutos</p>
+                        </div>
+                    `
+                },
+                'tarot-angelico': {
+                    title: 'Tarot Angélico',
+                    content: `
+                        <p class="text-gray-600 mb-4">Conexión con la energía angelical que incluye:</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>• Mensajes de tus ángeles guardianes</li>
+                            <li>• Orientación espiritual y protección</li>
+                            <li>• Sanación energética durante la sesión</li>
+                            <li>• Oración personalizada</li>
+                            <li>• Ritual de protección angelical</li>
+                        </ul>
+                        <div class="bg-orange-50 p-4 rounded">
+                            <p class="font-semibold text-orange-800">Precio: $60 USD</p>
+                            <p class="text-sm text-orange-600">Duración: 75 minutos</p>
+                        </div>
+                    `
+                },
+                'consejeria': {
+                    title: 'Consejería Espiritual',
+                    content: `
+                        <p class="text-gray-600 mb-4">Acompañamiento personalizado que incluye:</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>• Análisis de tu situación actual</li>
+                            <li>• Identificación de bloqueos energéticos</li>
+                            <li>• Plan de acción personalizado</li>
+                            <li>• Técnicas de sanación y liberación</li>
+                            <li>• Seguimiento y apoyo continuo</li>
+                        </ul>
+                        <div class="bg-green-50 p-4 rounded">
+                            <p class="font-semibold text-green-800">Precio: $70 USD</p>
+                            <p class="text-sm text-green-600">Duración: 90 minutos</p>
+                        </div>
+                    `
+                },
+                'guia': {
+                    title: 'Guía Espiritual',
+                    content: `
+                        <p class="text-gray-600 mb-4">Acompañamiento en tu camino espiritual que incluye:</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>• Sesiones mensuales de orientación</li>
+                            <li>• Prácticas espirituales personalizadas</li>
+                            <li>• Acceso a meditaciones guiadas</li>
+                            <li>• Apoyo vía WhatsApp entre sesiones</li>
+                            <li>• Rituales estacionales grupales</li>
+                        </ul>
+                        <div class="bg-pink-50 p-4 rounded">
+                            <p class="font-semibold text-pink-800">Precio: $120 USD/mes</p>
+                            <p class="text-sm text-pink-600">Compromiso mínimo: 3 meses</p>
+                        </div>
+                    `
+                },
+                'rituales': {
+                    title: 'Rituales Personalizados',
+                    content: `
+                        <p class="text-gray-600 mb-4">Ceremonias sagradas diseñadas específicamente para ti que incluyen:</p>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li>• Ritual de amor y relaciones</li>
+                            <li>• Ceremonia de prosperidad y abundancia</li>
+                            <li>• Ritual de protección y limpieza energética</li>
+                            <li>• Ceremonia de sanación emocional</li>
+                            <li>• Ritual de manifestación de deseos</li>
+                            <li>• Ceremonia de liberación y perdón</li>
+                        </ul>
+                        <div class="bg-amber-50 p-4 rounded">
+                            <p class="font-semibold text-amber-800">Precio: $90 USD</p>
+                            <p class="text-sm text-amber-600">Duración: 2 horas (incluye materiales)</p>
+                        </div>
+                    `
+                }
+            };
+            
+            title.textContent = services[serviceType].title;
+            content.innerHTML = services[serviceType].content;
+            modal.classList.remove('hidden');
+        }
+
+        function openProductModal(productType) {
+            const modal = document.getElementById('productModal');
+            const title = document.getElementById('productModalTitle');
+            const content = document.getElementById('productModalContent');
+            
+            const products = {
+                'velas': {
+                    title: 'Velas Rituales',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Vela de Amor - $12 USD</h5>
+                                <p class="text-sm text-gray-600">Rosa con esencias de rosa y canela</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Vela de Prosperidad - $15 USD</h5>
+                                <p class="text-sm text-gray-600">Verde con hierbas de abundancia</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Vela de Protección - $18 USD</h5>
+                                <p class="text-sm text-gray-600">Negra con sal marina y ruda</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">Vela de Limpieza - $14 USD</h5>
+                                <p class="text-sm text-gray-600">Blanca con salvia y palo santo</p>
+                            </div>
+                        </div>
+                    `
+                },
+                'esencias': {
+                    title: 'Esencias Aromáticas',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Esencia de Lavanda - $10 USD</h5>
+                                <p class="text-sm text-gray-600">Para relajación y paz interior</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Esencia de Sándalo - $16 USD</h5>
+                                <p class="text-sm text-gray-600">Para meditación profunda</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Esencia de Patchouli - $13 USD</h5>
+                                <p class="text-sm text-gray-600">Para conexión con la tierra</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">Esencia de Mirra - $20 USD</h5>
+                                <p class="text-sm text-gray-600">Para rituales sagrados</p>
+                            </div>
+                        </div>
+                    `
+                },
+                'jabones': {
+                    title: 'Jabones Energéticos',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Jabón de Ruda - $8 USD</h5>
+                                <p class="text-sm text-gray-600">Para limpieza de malas energías</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Jabón de Romero - $10 USD</h5>
+                                <p class="text-sm text-gray-600">Para claridad mental y protección</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Jabón de Miel - $12 USD</h5>
+                                <p class="text-sm text-gray-600">Para atraer dulzura y amor</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">Jabón de Coco - $9 USD</h5>
+                                <p class="text-sm text-gray-600">Para purificación y renovación</p>
+                            </div>
+                        </div>
+                    `
+                },
+                'libros': {
+                    title: 'Libros Espirituales',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Guía Completa del Tarot - $25 USD</h5>
+                                <p class="text-sm text-gray-600">Manual completo con interpretaciones</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Astrología para Principiantes - $20 USD</h5>
+                                <p class="text-sm text-gray-600">Introducción a la carta natal</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Meditaciones Angelicales - $18 USD</h5>
+                                <p class="text-sm text-gray-600">Conexión con los ángeles</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">Rituales de Luna - $22 USD</h5>
+                                <p class="text-sm text-gray-600">Ceremonias según fases lunares</p>
+                            </div>
+                        </div>
+                    `
+                },
+                'cuarzos': {
+                    title: 'Cuarzos y Cristales',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Cuarzo Rosa - $12 USD</h5>
+                                <p class="text-sm text-gray-600">Para el amor propio y relaciones</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Amatista - $18 USD</h5>
+                                <p class="text-sm text-gray-600">Para protección y espiritualidad</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Citrino - $15 USD</h5>
+                                <p class="text-sm text-gray-600">Para abundancia y prosperidad</p>
+                            </div>
+                            <div class="border-b pb-3">
+                                <h5 class="font-semibold">Cuarzo Transparente - $10 USD</h5>
+                                <p class="text-sm text-gray-600">Para amplificar energías</p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold">Obsidiana Negra - $10 USD</h5>
+                                <p class="text-sm text-gray-600">Para protección y limpieza</p>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            title.textContent = products[productType].title;
+            content.innerHTML = products[productType].content;
+            modal.classList.remove('hidden');
+        }
+
+        function openCourseModal(courseType) {
+            const modal = document.getElementById('courseModal');
+            const title = document.getElementById('courseModalTitle');
+            const content = document.getElementById('courseModalContent');
+            
+            const courses = {
+                'tarot-basico': {
+                    title: 'Curso de Tarot Básico',
+                    content: `
+                        <div class="space-y-4">
+                            <p class="text-gray-600">Aprende a leer las cartas del tarot desde cero con nuestro curso completo.</p>
+                            <div class="bg-purple-50 p-4 rounded">
+                                <h5 class="font-semibold mb-2">Incluye:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Baraja Rider-Waite completa</li>
+                                    <li>• Manual de 200 páginas</li>
+                                    <li>• 8 clases online en vivo</li>
+                                    <li>• Grupo privado de WhatsApp</li>
+                                    <li>• Certificado de finalización</li>
+                                    <li>• Acceso de por vida al material</li>
+                                </ul>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-purple-600">$160 USD</p>
+                                <p class="text-sm text-gray-500">Próximo inicio: 15 de enero</p>
+                            </div>
+                        </div>
+                    `
+                },
+                'astrologia': {
+                    title: 'Taller de Astrología',
+                    content: `
+                        <div class="space-y-4">
+                            <p class="text-gray-600">Descubre los secretos de la astrología y aprende a interpretar cartas natales.</p>
+                            <div class="bg-blue-50 p-4 rounded">
+                                <h5 class="font-semibold mb-2">Incluye:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Software de astrología profesional</li>
+                                    <li>• Manual de interpretación</li>
+                                    <li>• 6 clases presenciales u online</li>
+                                    <li>• Práctica con casos reales</li>
+                                    <li>• Certificado de participación</li>
+                                    <li>• Consulta individual incluida</li>
+                                </ul>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-2xl font-bold text-blue-600">$200 USD</p>
+                                <p class="text-sm text-gray-500">Próximo inicio: 1 de febrero</p>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            title.textContent = courses[courseType].title;
+            content.innerHTML = courses[courseType].content;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.getElementById('successMessage');
+            const successText = document.getElementById('successText');
+            successText.textContent = message;
+            successDiv.classList.remove('hidden');
+            
+            setTimeout(() => {
+                successDiv.classList.add('hidden');
+            }, 3000);
+        }
+
+        function bookService() {
+            closeModal('serviceModal');
+            showSuccess('¡Solicitud enviada! Te contactaremos pronto para agendar tu cita.');
+        }
+
+        function contactForProduct() {
+            closeModal('productModal');
+            showSuccess('¡Consulta enviada! Te enviaremos información detallada del producto.');
+        }
+
+        function enrollCourse() {
+            const courseTitle = document.getElementById('courseModalTitle').textContent;
+            openEnrollmentModal(courseTitle);
+            closeModal('courseModal');
+        }
+
+        function openEnrollmentModal(courseTitle) {
+            const modal = document.getElementById('enrollmentModal');
+            const title = document.getElementById('enrollmentModalTitle');
+            title.textContent = `Inscripción: ${courseTitle}`;
+            modal.classList.remove('hidden');
+        }
+
+        function openPaymentModal() {
+            const enrollmentData = getEnrollmentData();
+            if (!enrollmentData) return;
+            
+            closeModal('enrollmentModal');
+            const modal = document.getElementById('paymentModal');
+            const summary = document.getElementById('paymentSummary');
+            
+            summary.innerHTML = `
+                <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold mb-2">Resumen de Inscripción</h4>
+                    <p><strong>Curso:</strong> ${enrollmentData.course}</p>
+                    <p><strong>Estudiante:</strong> ${enrollmentData.name}</p>
+                    <p><strong>Email:</strong> ${enrollmentData.email}</p>
+                    <p><strong>Teléfono:</strong> ${enrollmentData.phone}</p>
+                    <p class="text-lg font-bold text-purple-600 mt-2">Total: ${enrollmentData.price}</p>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function getEnrollmentData() {
+            const form = document.getElementById('enrollmentForm');
+            const formData = new FormData(form);
+            
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return null;
+            }
+            
+            const courseTitle = document.getElementById('enrollmentModalTitle').textContent.replace('Inscripción: ', '');
+            const price = courseTitle.includes('Tarot Básico') ? '$160 USD' : '$200 USD';
+            
+            return {
+                course: courseTitle,
+                name: formData.get('studentName'),
+                email: formData.get('studentEmail'),
+                phone: formData.get('studentPhone'),
+                price: price
+            };
+        }
+
+        function processPayment(method) {
+            const paymentData = {
+                method: method,
+                course: document.getElementById('enrollmentModalTitle').textContent.replace('Inscripción: ', ''),
+                timestamp: new Date().toISOString()
+            };
+            
+            closeModal('paymentModal');
+            
+            if (method === 'transfer') {
+                openTransferModal();
+            } else if (method === 'paypal') {
+                showSuccess('Redirigiendo a PayPal... (Demo - No se procesará pago real)');
+            } else if (method === 'card') {
+                openCardModal();
+            }
+        }
+
+        function openTransferModal() {
+            const modal = document.getElementById('transferModal');
+            modal.classList.remove('hidden');
+        }
+
+        function openCardModal() {
+            const modal = document.getElementById('cardModal');
+            modal.classList.remove('hidden');
+        }
+
+        function confirmTransfer() {
+            closeModal('transferModal');
+            showSuccess('¡Inscripción completada! Te enviaremos confirmación por email una vez verifiquemos el pago.');
+        }
+
+        function processCardPayment() {
+            const form = document.getElementById('cardForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            
+            closeModal('cardModal');
+            showSuccess('¡Pago procesado exitosamente! Recibirás confirmación por email. (Demo)');
+        }
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const nombre = formData.get('nombre');
+            const email = formData.get('email');
+            const servicio = formData.get('servicio');
+            const mensaje = formData.get('mensaje');
+            
+            // Simulate form submission
+            showSuccess(`¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente.`);
+            this.reset();
+        });
+
+        // Format card number input
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            if (formattedValue.length > 19) formattedValue = formattedValue.substr(0, 19);
+            e.target.value = formattedValue;
+        });
+
+        // Format expiry date input
+        document.getElementById('expiryDate').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        // Format CVV input
+        document.getElementById('cvv').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99259f39d7ce603c',t:'MTc2MTEwMDc0My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
