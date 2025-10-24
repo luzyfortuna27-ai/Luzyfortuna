@@ -689,21 +689,7 @@
             
             <div id="paymentSummary" class="mb-6"></div>
             
-            <div class="space-y-3">
-                <button onclick="processPayment('transfer')" class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
-                    <span>🏦</span>
-                    <span>Transferencia Bancaria</span>
-                </button>
-                
-                <button onclick="processPayment('paypal')" class="w-full bg-yellow-500 text-white px-4 py-3 rounded-lg hover:bg-yellow-600 transition-colors flex items-center justify-center space-x-2">
-                    <span>💳</span>
-                    <span>PayPal (Demo)</span>
-                </button>
-                
-                <button onclick="processPayment('card')" class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2">
-                    <span>💳</span>
-                    <span>Tarjeta de Crédito (Demo)</span>
-                </button>
+            <div class="space-y-3"><button onclick="processPayment(\'transfer\')" class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"><span>🏦</span><span>Transferencia Bancaria</span></button>
             </div>
             
             <div class="mt-4 text-center">
@@ -729,11 +715,11 @@
             <div class="bg-gray-50 p-4 rounded-lg mb-6">
                 <h4 class="font-semibold mb-3">Datos Bancarios:</h4>
                 <div class="space-y-2 text-sm">
-                    <p><strong>Banco:</strong> Nequi</p>
+                    <p><strong>Banco:</strong> Bancolombia</p>
                     <p><strong>Tipo de Cuenta:</strong> Ahorros</p>
-                    <p><strong>Número:</strong> 3012842830</p>
+                    <p><strong>Número:</strong> 1234-5678-9012</p>
                     <p><strong>Titular:</strong> Silvia Luz Chica</p>
-                    <p><strong>Cédula:</strong> 43.724.147</p>
+                    <p><strong>Cédula:</strong> 12.345.678</p>
                 </div>
             </div>
             
@@ -754,42 +740,7 @@
         </div>
     </div>
 
-    <!-- Card Payment Modal -->
-    <div id="cardModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-md w-full p-6">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-xl font-bold">Pago con Tarjeta (Demo)</h3>
-                <button onclick="closeModal('cardModal')" class="text-gray-500 hover:text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg mb-4">
-                <p class="text-sm text-yellow-800">
-                    <strong>Nota:</strong> Este es un formulario de demostración. No se procesarán pagos reales.
-                </p>
-            </div>
-            
-            <form id="cardForm" class="space-y-4">
-                <div>
-                    <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-2">Número de Tarjeta</label>
-                    <input type="text" id="cardNumber" name="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label for="expiryDate" class="block text-sm font-medium text-gray-700 mb-2">Fecha de Vencimiento</label>
-                        <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/AA" maxlength="5" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                    </div>
-                    <div>
-                        <label for="cvv" class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
-                        <input type="text" id="cvv" name="cvv" required placeholder="123" maxlength="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                    </div>
-                </div>
-                
-                <div>
                     <label for="cardName" class="block text-sm font-medium text-gray-700 mb-2">Nombre en la Tarjeta</label>
                     <input type="text" id="cardName" name="cardName" required placeholder="JUAN PEREZ" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
                 </div>
@@ -831,8 +782,8 @@
                 'rituales': 'Rituales Personalizados ($90 USD)'
             };
             
-            const message = `¡Hola Luz! Me interesa el servicio: ${services[serviceType]}. ¿Podrías darme más información y disponibilidad para agendar una cita?`;
-            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            const message = `¡Hola Silvia! Me interesa el servicio: ${services[serviceType]}. ¿Podrías darme más información y disponibilidad para agendar una cita?`;
+            const whatsappUrl = `https://wa.me/5573012842830?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
 
@@ -845,8 +796,8 @@
                 'cuarzos': 'Cuarzos y Cristales'
             };
             
-            const message = `¡Hola Luz! Me interesan los productos: ${products[productType]}. ¿Podrías enviarme el catálogo completo con precios, disponibilidad y formas de pago?`;
-            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            const message = `¡Hola Silvia! Me interesan los productos: ${products[productType]}. ¿Podrías enviarme el catálogo completo con precios, disponibilidad y formas de pago?`;
+            const whatsappUrl = `https://wa.me/5573012842830?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
 
@@ -856,14 +807,14 @@
                 'astrologia': 'Taller de Astrología ($200 USD)'
             };
             
-            const message = `¡Hola Luz! Me interesa inscribirme en: ${courses[courseType]}. ¿Podrías darme información sobre fechas de inicio, modalidades y proceso de inscripción?`;
-            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            const message = `¡Hola Silvia! Me interesa inscribirme en: ${courses[courseType]}. ¿Podrías darme información sobre fechas de inicio, modalidades y proceso de inscripción?`;
+            const whatsappUrl = `https://wa.me/5573012842830?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
 
         function contactWhatsAppGeneral() {
-            const message = `¡Hola Luz! Me interesa conocer más sobre tus servicios espirituales y productos esotéricos. ¿Podrías ayudarme a encontrar lo que necesito para mi crecimiento espiritual?`;
-            const whatsappUrl = `https://wa.me/573012842830?text=${encodeURIComponent(message)}`;
+            const message = `¡Hola Silvia! Me interesa conocer más sobre tus servicios espirituales y productos esotéricos. ¿Podrías ayudarme a encontrar lo que necesito para mi crecimiento espiritual?`;
+            const whatsappUrl = `https://wa.me/5573012842830?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
         }
 
